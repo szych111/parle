@@ -33,6 +33,7 @@ nav {
 }
 nav ul {
   list-style: none;
+  display: flex;
 }
 
 .logo {
@@ -56,7 +57,22 @@ h1 {
 
 header {
   font-size: 1.25rem;
+}
+header p {
   max-width: 75ch;
+}
+
+img {
+  max-height: 20rem;
+}
+
+img + div {
+  font-size: 0.625rem;
+  color: rgb(0, 0, 255);
+}
+
+a {
+  color: rgb(0, 0, 255);
 }
 
 p {
@@ -79,7 +95,7 @@ button:focus-visible, button:hover {
 }
 
 .section > div {
-  margin-block: 2rem;
+  margin-bottom: 2rem;
 }
 
 .image-container {

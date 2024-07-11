@@ -35,6 +35,7 @@ nav {
 
   ul {
     list-style: none;
+    display: flex;
   }
 }
 
@@ -59,87 +60,101 @@ h1 {
 
 header {
   font-size: 1.25rem;
-  max-width: 75ch;
-}
 
-p {
-  max-width: 45ch;
-  margin-bottom: 2rem;
-}
-
-button {
-  border: 2px solid black;
-  border-radius: 0;
-  background-color: transparent;
-  padding: .5rem 1rem;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 500ms;
-
-  &:focus-visible,
-  &:hover {
-    border: 2px dashed black;
+  p {
+    max-width: 75ch;
   }
 }
 
-.section {
-  // margin-block: 1rem;
-  
-  & > div {
-    margin-block: 2rem;
-  }
+img {
+  max-height: 20rem;
 }
 
-.image-container {
-  box-shadow: 4px 4px 4px rgb(131, 130, 130);
+img+div {
+  font-size: .625rem;
+  color: rgb(0, 0, 255);
 }
 
-.icon {
-  $spacer: .375rem;
-
-  margin-right: $spacer;
-
-  svg {
-    width: $spacer * 6;
-    height: $spacer * 6;
-  }
-}
-
-.vocab-box {
-  border: 1px solid black;
-  padding: .5rem;
-
-  h3 {
-    font-size: 2rem;
+a {
+  color: rgb(0, 0, 255);
   }
 
-  h3,
-  h4 {
-    margin-block: 0;
+  p {
+    max-width: 45ch;
+    margin-bottom: 2rem;
   }
 
-  div {
-    border: 1px solid black;
-    padding: 1rem;
-  }
-}
+  button {
+    border: 2px solid black;
+    border-radius: 0;
+    background-color: transparent;
+    padding: .5rem 1rem;
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 500ms;
 
-@media (min-width: 992px) {
-  body {
-    max-width: 1200px;
-    margin-inline: auto;
+    &:focus-visible,
+    &:hover {
+      border: 2px dashed black;
+    }
   }
 
   .section {
-    margin-block: 3rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
+    &>div {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .image-container {
+    box-shadow: 4px 4px 4px rgb(131, 130, 130);
   }
 
   .icon {
-    $spacer: .5rem;
+    $spacer: .375rem;
+
+    margin-right: $spacer;
+
+    svg {
+      width: $spacer * 6;
+      height: $spacer * 6;
+    }
   }
-}
+
+  .vocab-box {
+    border: 1px solid black;
+    padding: .5rem;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    h3,
+    h4 {
+      margin-block: 0;
+    }
+
+    div {
+      border: 1px solid black;
+      padding: 1rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    body {
+      max-width: 1200px;
+      margin-inline: auto;
+    }
+
+    .section {
+      margin-block: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .icon {
+      $spacer: .5rem;
+    }
+  }
