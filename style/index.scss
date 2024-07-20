@@ -1,3 +1,7 @@
+$blue: rgb(1, 33, 105);
+$red: rgb(200, 16, 46);
+$spacer: .75rem;
+
 body {
   //background-color: rgb(211, 212, 214);
   font-family: "Noto Sans", sans-serif;
@@ -6,6 +10,10 @@ body {
   font-style: normal;
   padding-inline: 1rem;
   line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
 }
 
 .noto {
@@ -25,7 +33,8 @@ body {
 }
 
 .red {
-  color: red;
+  color: $red;
+  font-weight: 900;
 }
 
 nav {
@@ -40,7 +49,7 @@ nav {
 }
 
 .logo {
-  font-size: 5rem;
+  font-size: 5 * $spacer;
   font-weight: 900;
 }
 
@@ -59,102 +68,182 @@ h1 {
 }
 
 header {
-  font-size: 1.25rem;
+  font-size: 1.25 * $spacer;
+  margin-bottom: 3 * $spacer;
 
   p {
     max-width: 75ch;
   }
-}
 
-img {
-  max-height: 20rem;
-}
-
-img+div {
-  font-size: .625rem;
-  color: rgb(0, 0, 255);
-}
-
-a {
-  color: rgb(0, 0, 255);
-  }
-
-  p {
-    max-width: 45ch;
-    margin-bottom: 2rem;
-  }
-
-  button {
-    border: 2px solid black;
-    border-radius: 0;
-    background-color: transparent;
-    padding: .5rem 1rem;
-    font-family: "Noto Sans", sans-serif;
-    font-weight: 700;
+  .piglet {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
     cursor: pointer;
-    transition: 500ms;
 
-    &:focus-visible,
-    &:hover {
-      border: 2px dashed black;
-    }
-  }
-
-  .section {
-    &>div {
-      margin-bottom: 2rem;
-    }
-  }
-
-  .image-container {
-    box-shadow: 4px 4px 4px rgb(131, 130, 130);
-  }
-
-  .icon {
-    $spacer: .375rem;
-
-    margin-right: $spacer;
-
-    svg {
-      width: $spacer * 6;
-      height: $spacer * 6;
-    }
-  }
-
-  .vocab-box {
-    border: 1px solid black;
-    padding: .5rem;
-
-    h3 {
-      font-size: 2rem;
-    }
-
-    h3,
-    h4 {
-      margin-block: 0;
+    span {
+      font-size: $spacer;
+      font-family: "Playwrite PE", cursive;
+      color: $blue;
     }
 
     div {
-      border: 1px solid black;
-      padding: 1rem;
+      border-bottom: 2px dashed $blue;
+      flex-grow: 1;
+      min-width: $spacer * 6;
+    }
+
+    svg {
+      $size: 1.5rem;
+      fill: $blue;
+      width: $size;
+      height: $size;
+      text-align: right;
+      margin: 0 15% -.25rem 0;
     }
   }
 
-  @media (min-width: 992px) {
-    body {
-      max-width: 1200px;
-      margin-inline: auto;
+  .teaser {
+    flex-basis: 30%;
+
+    a {
+      text-align: center;
+      background-color: $blue;
+      padding: .5em 1em;
+      display: block;
+      font-size: 1.5 * $spacer;
+      font-weight: 900;
+      color: white;
+      margin: 0 auto;
+      transition: 300ms ease-in;
     }
 
-    .section {
-      margin-block: 3rem;
-      display: flex;
+    a {
+      text-decoration: none;
+    }
+
+    a span:hover,
+    a span:focus-visible {
+      opacity: .7;
+    }
+  }
+}
+
+svg.piglet {
+  transform: scaleX(-1);
+}
+
+a {
+  color: $blue;
+}
+
+p {
+  max-width: 45ch;
+  //margin-bottom: 1em;
+}
+
+button {
+  border: 2px solid black;
+  border-radius: 0;
+  background-color: transparent;
+  padding: .5em 1.5em;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 500ms;
+
+  &:focus-visible,
+  &:hover {
+    border: 2px dashed black;
+  }
+}
+
+.section {
+  &>div {
+    margin-bottom: 2 * $spacer;
+  }
+}
+
+.image-container {
+  text-align: center;
+
+  img+div {
+    text-align: left;
+    font-size: .625 * $spacer;
+    color: $blue;
+  }
+
+  img {
+    width: 100%;
+    max-height: 22rem;
+  }
+}
+
+.icon {
+  $size: .375rem;
+
+  margin-right: $size;
+
+  svg {
+    width: $size * 7;
+    height: $size * 7;
+  }
+
+  .piglet {
+    margin-bottom: -.125rem;
+    width: $size * 5;
+    height: $size * 5;
+  }
+}
+
+.vocab-box {
+  border: 1px solid black;
+  padding: .5em;
+
+  h3 {
+    font-size: 2 * $spacer;
+  }
+
+  h3,
+  h4 {
+    margin-block: 0;
+  }
+
+  div {
+    border: 1px solid black;
+    padding: 1em;
+  }
+}
+
+@media (min-width: 768px) {
+  $spacer: 1rem;
+
+  body {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .section {
+    display: flex;
+    align-items: center;
+    gap: 3 * $spacer;
+
+    &:not(:has(.teaser)) {
       justify-content: space-between;
-      align-items: center;
-      gap: 3rem;
-    }
-
-    .icon {
-      $spacer: .5rem;
+      margin-block: 3 * $spacer;
     }
   }
+
+  .icon {
+    $size: .5rem;
+  }
+
+  .piglet span {
+    margin-right: .125 * $spacer;
+    margin-bottom: -.5 * $spacer;
+  }
+
+  #discount {
+    flex-direction: row-reverse;
+  }
+}
