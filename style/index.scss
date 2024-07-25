@@ -3,17 +3,43 @@ $red: rgb(200, 16, 46);
 $spacer: .75rem;
 
 body {
-  //background-color: rgb(211, 212, 214);
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   padding-inline: 1rem;
   line-height: 1.5;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 
 img {
   max-width: 100%;
+}
+
+a {
+  color: $blue;
+}
+
+p {
+  max-width: 45ch;
+}
+
+button {
+  color: $blue;
+  border: 2px solid currentColor;
+  border-radius: 0;
+  background-color: transparent;
+  padding: .5em 1.5em;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 500ms;
+
+  &:focus-visible,
+  &:hover {
+    border: 2px dashed currentColor;
+  }
 }
 
 .noto {
@@ -37,17 +63,6 @@ img {
   font-weight: 900;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 2rem;
-
-  ul {
-    list-style: none;
-    display: flex;
-  }
-}
-
 .logo {
   font-size: 5 * $spacer;
   font-weight: 900;
@@ -67,19 +82,62 @@ h1 {
   font-weight: 200;
 }
 
+nav a,
+button a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  //align-items: end;
+  margin-bottom: $spacer * -2;
+
+  ul {
+    --size: 1rem;
+    list-style: none;
+
+    li {
+      margin-bottom: calc(var(--size) * .25);
+    }
+
+    svg {
+      width: var(--size);
+      height: var(--size);
+    }
+  }
+}
+
 header {
   font-size: 1.25 * $spacer;
   margin-bottom: 3 * $spacer;
+  max-width: 75ch;
+  //border-bottom: 2px dashed $blue;
 
   p {
-    max-width: 75ch;
+    max-width: 100%;
   }
 
   .piglet {
     display: flex;
+    align-items: end;
+    //justify-content: end;
+    gap: .5rem;
     flex-wrap: wrap;
-    margin-top: 2rem;
-    cursor: pointer;
+    margin-top: 1rem;
+    color: $blue;
+    //background-color: aquamarine;
+
+    h2 {
+      font-family: "Noto Sans", sans-serif;
+      font-weight: 900;
+      margin-block: 0;
+    }
+
+    .and {
+      flex-grow: 1;
+      border-bottom: 2px dashed $blue;
+    }
 
     span {
       font-size: $spacer;
@@ -87,19 +145,12 @@ header {
       color: $blue;
     }
 
-    div {
-      border-bottom: 2px dashed $blue;
-      flex-grow: 1;
-      min-width: $spacer * 6;
-    }
-
     svg {
-      $size: 1.5rem;
-      fill: $blue;
-      width: $size;
-      height: $size;
+      --size: 1.25rem;
+      width: var(--size);
+      height: var(--size);
       text-align: right;
-      margin: 0 15% -.25rem 0;
+      margin-bottom: -2px;
     }
   }
 
@@ -131,31 +182,6 @@ header {
 
 svg.piglet {
   transform: scaleX(-1);
-}
-
-a {
-  color: $blue;
-}
-
-p {
-  max-width: 45ch;
-  //margin-bottom: 1em;
-}
-
-button {
-  border: 2px solid black;
-  border-radius: 0;
-  background-color: transparent;
-  padding: .5em 1.5em;
-  font-family: "Noto Sans", sans-serif;
-  font-weight: 700;
-  cursor: pointer;
-  transition: 500ms;
-
-  &:focus-visible,
-  &:hover {
-    border: 2px dashed black;
-  }
 }
 
 .section {
@@ -218,29 +244,33 @@ button {
 @media (min-width: 768px) {
   $spacer: 1rem;
 
-  body {
-    max-width: 1200px;
-    margin-inline: auto;
-  }
-
   .section {
     display: flex;
     align-items: center;
     gap: 3 * $spacer;
+  }
 
-    &:not(:has(.teaser)) {
-      justify-content: space-between;
-      margin-block: 3 * $spacer;
-    }
+  .section:not(:has(.teaser)),
+  header {
+    justify-content: space-between;
+    margin-bottom: 2 * $spacer;
   }
 
   .icon {
     $size: .5rem;
   }
 
+  nav ul {
+    --size: 1.5rem;
+  }
+
   .piglet span {
     margin-right: .125 * $spacer;
-    margin-bottom: -.5 * $spacer;
+    margin-bottom: -.125 * $spacer;
+
+    svg {
+      --size: 3rem;
+    }
   }
 
   #discount {
