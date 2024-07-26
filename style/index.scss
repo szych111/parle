@@ -1,32 +1,28 @@
-$blue: rgb(1, 33, 105);
-$red: rgb(200, 16, 46);
-$spacer: .75rem;
+// --- general styles
+
+:root {
+  --blue: rgb(1, 33, 105);
+  --red: rgb(200, 16, 46);
+  --spacer: .75rem;
+}
+
+a {
+  color: var(--blue);
+}
 
 body {
   font-family: "Noto Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  padding-inline: 1rem;
+  padding: calc(var(--spacer) * .25) 1rem calc(var(--spacer) * 3);
   line-height: 1.5;
   max-width: 1200px;
   margin-inline: auto;
 }
 
-img {
-  max-width: 100%;
-}
-
-a {
-  color: $blue;
-}
-
-p {
-  max-width: 45ch;
-}
-
 button {
-  color: $blue;
+  color: var(--blue);
   border: 2px solid currentColor;
   border-radius: 0;
   background-color: transparent;
@@ -38,34 +34,8 @@ button {
 
   &:focus-visible,
   &:hover {
-    border: 2px dashed currentColor;
+    border-style: dashed;
   }
-}
-
-.noto {
-  font-family: "Noto Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings:
-    "wdth" 100;
-}
-
-.playwrite {
-  font-family: "Playwrite PE", cursive;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-}
-
-.red {
-  color: $red;
-  font-weight: 900;
-}
-
-.logo {
-  font-size: 5 * $spacer;
-  font-weight: 900;
 }
 
 h1,
@@ -74,12 +44,41 @@ h3,
 h4,
 h5 {
   font-family: "Playwrite PE", cursive;
-  font-optical-sizing: auto;
   font-weight: 200;
+  margin: .125em 0 calc(var(--spacer) * 1.25);
 }
 
-h1 {
-  font-weight: 200;
+p {
+  max-width: 45ch;
+  margin: .125em 0 1em;
+}
+
+// --- custom styles
+
+// .noto {
+//   font-family: "Noto Sans", sans-serif;
+//   font-optical-sizing: auto;
+//   font-weight: 400;
+//   font-style: normal;
+//   font-variation-settings:
+//     "wdth" 100;
+// }
+
+// .playwrite {
+//   font-family: "Playwrite PE", cursive;
+//   font-optical-sizing: auto;
+//   font-weight: 300;
+//   font-style: normal;
+// }
+
+.red {
+  color: var(--red);
+  font-weight: 900;
+}
+
+.logo {
+  font-size: calc(5 * var(--spacer));
+  font-weight: 900;
 }
 
 nav a,
@@ -90,29 +89,25 @@ button a {
 nav {
   display: flex;
   justify-content: space-between;
-  //align-items: end;
-  margin-bottom: $spacer * -2;
 
   ul {
-    --size: 1rem;
     list-style: none;
+    margin: var(--spacer);
 
     li {
-      margin-bottom: calc(var(--size) * .25);
+      margin-bottom: calc(var(--spacer) * .25);
     }
 
     svg {
-      width: var(--size);
-      height: var(--size);
+      width: calc(var(--spacer) * 1.5);
+      height: calc(var(--spacer) * 1.5);
     }
   }
 }
 
 header {
-  font-size: 1.25 * $spacer;
-  margin-bottom: 3 * $spacer;
-  max-width: 75ch;
-  //border-bottom: 2px dashed $blue;
+  font-size: calc(1.25 * var(--spacer));
+  max-width: 55ch;
 
   p {
     max-width: 100%;
@@ -121,12 +116,10 @@ header {
   .piglet {
     display: flex;
     align-items: end;
-    //justify-content: end;
     gap: .5rem;
     flex-wrap: wrap;
-    margin-top: 1rem;
-    color: $blue;
-    //background-color: aquamarine;
+    margin-top: calc(var(--spacer) * 1.5);
+    color: var(--blue);
 
     h2 {
       font-family: "Noto Sans", sans-serif;
@@ -136,13 +129,13 @@ header {
 
     .and {
       flex-grow: 1;
-      border-bottom: 2px dashed $blue;
+      border-bottom: 2px dashed var(--blue);
     }
 
     span {
-      font-size: $spacer;
+      font-size: var(--spacer);
       font-family: "Playwrite PE", cursive;
-      color: $blue;
+      color: var(--blue);
     }
 
     svg {
@@ -153,41 +146,17 @@ header {
       margin-bottom: -2px;
     }
   }
-
-  .teaser {
-    flex-basis: 30%;
-
-    a {
-      text-align: center;
-      background-color: $blue;
-      padding: .5em 1em;
-      display: block;
-      font-size: 1.5 * $spacer;
-      font-weight: 900;
-      color: white;
-      margin: 0 auto;
-      transition: 300ms ease-in;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    a span:hover,
-    a span:focus-visible {
-      opacity: .7;
-    }
-  }
-}
-
-svg.piglet {
-  transform: scaleX(-1);
 }
 
 .section {
   &>div {
-    margin-bottom: 2 * $spacer;
+    margin-bottom: calc(2 * var(--spacer));
   }
+}
+
+.section,
+header {
+  margin-bottom: calc(3.75 * var(--spacer));
 }
 
 .image-container {
@@ -195,8 +164,8 @@ svg.piglet {
 
   img+div {
     text-align: left;
-    font-size: .625 * $spacer;
-    color: $blue;
+    font-size: calc(.625 * var(--spacer));
+    color: var(--blue);
   }
 
   img {
@@ -205,72 +174,66 @@ svg.piglet {
   }
 }
 
-.icon {
-  $size: .375rem;
-
-  margin-right: $size;
+.header-icon {
+  margin-right: calc(var(--spacer) * .5);
 
   svg {
-    width: $size * 7;
-    height: $size * 7;
+    width: calc(var(--spacer) * 2.5);
+    height: calc(var(--spacer) * 2.5);
   }
 
   .piglet {
-    margin-bottom: -.125rem;
-    width: $size * 5;
-    height: $size * 5;
+    margin-bottom: -.25rem;
+    width: calc(var(--spacer) * 2.25);
+    height: calc(var(--spacer) * 2.25);
   }
 }
 
+svg.piglet {
+  transform: scaleX(-1);
+}
+
 .vocab-box {
-  border: 1px solid black;
   padding: .5em;
 
-  h3 {
-    font-size: 2 * $spacer;
+  &,
+  div {
+    border: 1px solid black;
   }
 
-  h3,
+  h3 {
+    font-size: calc(var(--spacer) * 1.625);
+    margin-bottom: .125rem;
+  }
+
   h4 {
-    margin-block: 0;
+    margin-bottom: 1em;
   }
 
   div {
-    border: 1px solid black;
     padding: 1em;
   }
 }
 
+// --- large screens
+
 @media (min-width: 768px) {
-  $spacer: 1rem;
+  :root {
+    --spacer: 1rem;
+  }
 
   .section {
     display: flex;
-    align-items: center;
-    gap: 3 * $spacer;
+    gap: 3em;
   }
 
-  .section:not(:has(.teaser)),
+  .section,
   header {
     justify-content: space-between;
-    margin-bottom: 2 * $spacer;
   }
 
-  .icon {
-    $size: .5rem;
-  }
-
-  nav ul {
-    --size: 1.5rem;
-  }
-
-  .piglet span {
-    margin-right: .125 * $spacer;
-    margin-bottom: -.125 * $spacer;
-
-    svg {
-      --size: 3rem;
-    }
+  header .piglet {
+    margin-top: 1.5rem;
   }
 
   #discount {
