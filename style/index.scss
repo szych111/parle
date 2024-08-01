@@ -21,12 +21,13 @@ body {
   margin-inline: auto;
 }
 
-button {
+button,
+a.button {
   color: var(--blue);
   border: 2px solid currentColor;
   border-radius: 0;
   background-color: transparent;
-  padding: .5em 1.5em;
+  padding: .25em 1.25em;
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   cursor: pointer;
@@ -82,7 +83,7 @@ p {
 }
 
 nav a,
-button a {
+a.button {
   text-decoration: none;
 }
 
@@ -106,11 +107,11 @@ nav {
 }
 
 header {
-  font-size: calc(1.25 * var(--spacer));
-  max-width: 55ch;
+  max-width: 80ch;
 
   p {
     max-width: 100%;
+    font-size: calc(1.25 * var(--spacer));
   }
 
   .piglet {
@@ -136,6 +137,7 @@ header {
       font-size: var(--spacer);
       font-family: "Playwrite PE", cursive;
       color: var(--blue);
+      margin-bottom: -.25em;
     }
 
     svg {
@@ -156,7 +158,7 @@ header {
 
 .section,
 header {
-  margin-bottom: calc(3.75 * var(--spacer));
+  margin-bottom: calc(4 * var(--spacer));
 }
 
 .image-container {
@@ -213,6 +215,10 @@ svg.piglet {
   div {
     padding: 1em;
   }
+}
+
+.vocab-box+div p:last-of-type {
+  margin-bottom: 2rem;
 }
 
 // --- large screens

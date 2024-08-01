@@ -19,18 +19,21 @@ body {
   margin-inline: auto;
 }
 
-button {
+button,
+a.button {
   color: var(--blue);
   border: 2px solid currentColor;
   border-radius: 0;
   background-color: transparent;
-  padding: 0.5em 1.5em;
+  padding: 0.25em 1.25em;
   font-family: "Noto Sans", sans-serif;
   font-weight: 700;
   cursor: pointer;
   transition: 500ms;
 }
-button:focus-visible, button:hover {
+button:focus-visible, button:hover,
+a.button:focus-visible,
+a.button:hover {
   border-style: dashed;
 }
 
@@ -60,7 +63,7 @@ p {
 }
 
 nav a,
-button a {
+a.button {
   text-decoration: none;
 }
 
@@ -81,11 +84,11 @@ nav ul svg {
 }
 
 header {
-  font-size: calc(1.25 * var(--spacer));
-  max-width: 55ch;
+  max-width: 80ch;
 }
 header p {
   max-width: 100%;
+  font-size: calc(1.25 * var(--spacer));
 }
 header .piglet {
   display: flex;
@@ -108,6 +111,7 @@ header .piglet span {
   font-size: var(--spacer);
   font-family: "Playwrite PE", cursive;
   color: var(--blue);
+  margin-bottom: -0.25em;
 }
 header .piglet svg {
   --size: 1.25rem;
@@ -123,7 +127,7 @@ header .piglet svg {
 
 .section,
 header {
-  margin-bottom: calc(3.75 * var(--spacer));
+  margin-bottom: calc(4 * var(--spacer));
 }
 
 .image-container {
@@ -172,6 +176,10 @@ svg.piglet {
 }
 .vocab-box div {
   padding: 1em;
+}
+
+.vocab-box + div p:last-of-type {
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
