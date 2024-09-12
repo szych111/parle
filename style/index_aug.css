@@ -126,31 +126,22 @@ header .piglet svg {
   margin-bottom: -2px;
 }
 
-.source {
-  text-align: left;
-  font-size: calc(0.5 * var(--spacer));
-  color: var(--blue);
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-}
-.column > *:last-child {
-  margin-top: auto;
-}
-
 .section > div {
   margin-bottom: calc(2 * var(--spacer));
 }
 
 .section,
 header {
-  margin-bottom: calc(6 * var(--spacer));
+  margin-bottom: calc(4 * var(--spacer));
 }
 
 .image-container {
   text-align: center;
+}
+.image-container img + div {
+  text-align: left;
+  font-size: calc(0.625 * var(--spacer));
+  color: var(--blue);
 }
 .image-container img {
   width: 100%;

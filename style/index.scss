@@ -96,12 +96,19 @@ nav {
     margin: var(--spacer);
 
     li {
-      margin-bottom: calc(var(--spacer) * .25);
+      margin-bottom: calc(var(--spacer) * .375);
     }
 
     svg {
       width: calc(var(--spacer) * 1.5);
       height: calc(var(--spacer) * 1.5);
+      transition: transform 300ms ease-in;
+    }
+
+
+    svg:hover,
+    svg:focus-visible {
+      transform: rotate(15deg);
     }
   }
 }
@@ -150,6 +157,21 @@ header {
   }
 }
 
+.source {
+  text-align: left;
+  font-size: calc(.5 * var(--spacer));
+  color: var(--blue);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+
+  &>*:last-child {
+    margin-top: auto;
+  }
+}
+
 .section {
   &>div {
     margin-bottom: calc(2 * var(--spacer));
@@ -158,17 +180,11 @@ header {
 
 .section,
 header {
-  margin-bottom: calc(4 * var(--spacer));
+  margin-bottom: calc(6 * var(--spacer));
 }
 
 .image-container {
   text-align: center;
-
-  img+div {
-    text-align: left;
-    font-size: calc(.625 * var(--spacer));
-    color: var(--blue);
-  }
 
   img {
     width: 100%;
