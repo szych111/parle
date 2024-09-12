@@ -14,7 +14,7 @@ body {
   font-weight: 400;
   font-style: normal;
   padding: calc(var(--spacer) * 0.25) 1rem calc(var(--spacer) * 3);
-  line-height: 1.5;
+  line-height: 1.55;
   max-width: 1200px;
   margin-inline: auto;
 }
@@ -50,6 +50,10 @@ h5 {
 p {
   max-width: 45ch;
   margin: 0.125em 0 1em;
+}
+
+.mb-1 {
+  margin-bottom: var(--spacer);
 }
 
 .red {
@@ -93,7 +97,7 @@ header {
 }
 header p {
   max-width: 100%;
-  font-size: calc(1.25 * var(--spacer));
+  font-size: calc(1.15 * var(--spacer));
 }
 header .piglet {
   display: flex;

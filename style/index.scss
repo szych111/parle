@@ -16,7 +16,7 @@ body {
   font-weight: 400;
   font-style: normal;
   padding: calc(var(--spacer) * .25) 1rem calc(var(--spacer) * 3);
-  line-height: 1.5;
+  line-height: 1.55;
   max-width: 1200px;
   margin-inline: auto;
 }
@@ -56,21 +56,9 @@ p {
 
 // --- custom styles
 
-// .noto {
-//   font-family: "Noto Sans", sans-serif;
-//   font-optical-sizing: auto;
-//   font-weight: 400;
-//   font-style: normal;
-//   font-variation-settings:
-//     "wdth" 100;
-// }
-
-// .playwrite {
-//   font-family: "Playwrite PE", cursive;
-//   font-optical-sizing: auto;
-//   font-weight: 300;
-//   font-style: normal;
-// }
+.mb-1 {
+  margin-bottom: var(--spacer);
+}
 
 .red {
   color: var(--red);
@@ -118,7 +106,7 @@ header {
 
   p {
     max-width: 100%;
-    font-size: calc(1.25 * var(--spacer));
+    font-size: calc(1.15 * var(--spacer));
   }
 
   .piglet {
